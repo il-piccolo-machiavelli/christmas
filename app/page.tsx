@@ -7,7 +7,7 @@ const ChristmasCard = () => {
   const [tiltY, setTiltY] = useState(0);
 
   useEffect(() => {
-    const handleOrientation = (event) => {
+    const handleOrientation = (event: DeviceOrientationEvent) => {
       const x = event.gamma || 0;
       const y = event.beta || 0;
       
@@ -19,7 +19,7 @@ const ChristmasCard = () => {
     return () => window.removeEventListener('deviceorientation', handleOrientation);
   }, []);
 
-  const createSnowflakes = (count, layer) => {
+  const createSnowflakes = (count: number, layer: number) => {
     const size = layer === 1 ? '4px' : layer === 2 ? '8px' : '12px';
     const blur = layer === 1 ? '1px' : layer === 2 ? '2px' : '3px';
     const speed = layer === 1 ? '15s' : layer === 2 ? '12s' : '10s';
