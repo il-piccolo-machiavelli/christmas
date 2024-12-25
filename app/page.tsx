@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 
 const ChristmasCard = () => {
@@ -17,7 +19,6 @@ const ChristmasCard = () => {
     return () => window.removeEventListener('deviceorientation', handleOrientation);
   }, []);
 
-  // 눈송이 레이어를 3개로 나누어 원근감 표현
   const createSnowflakes = (count, layer) => {
     const size = layer === 1 ? '4px' : layer === 2 ? '8px' : '12px';
     const blur = layer === 1 ? '1px' : layer === 2 ? '2px' : '3px';
